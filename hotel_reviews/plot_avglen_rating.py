@@ -21,8 +21,14 @@ df["length_neg"] = df["review_neg"].str.split().str.len()
 pos = df[["length_pos", "rating"]].groupby("rating").mean()
 neg = df[["length_neg", "rating"]].groupby("rating").mean()
 
-ax = pos.plot(kind="bar", color=colors[0], alpha=0.7, label="Positive")
-neg.plot(kind="bar", ax=ax, color=colors[1], alpha=0.7, label="Negative")
+combined = pd.concat(
+    [
+        pos.rename(columns={"length_pos": "Positive"}),
+        neg.rename(columns={"length_neg": "Negative"}),
+    ],
+    axis=1,
+)
+ax = combined.plot(kind="bar", stacked=True, color=colors)
 
 ax.set_title("Average number of words vs. Rating")
 ax.set_xlabel("Rating")
