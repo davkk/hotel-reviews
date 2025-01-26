@@ -36,11 +36,11 @@ Dawid Karpiński
 
 ---
 
-<img src="./figures/plot_neg_pos_rating.pdf.svg" alt="center" />
+<img src="./figures/plot_avglen_rating.pdf.svg" alt="center" />
 
 ---
 
-<img src="./figures/plot_avglen_rating.pdf.svg" alt="center" />
+<img src="./figures/plot_neg_pos_rating.pdf.svg" alt="center" />
 
 ---
 
